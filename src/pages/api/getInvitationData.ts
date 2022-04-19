@@ -27,7 +27,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { confirmationCode } = req.body;
-  console.log('confirmationCode: ', confirmationCode)
+
   if (!confirmationCode) {
     return res.status(400).json({ error: 'Invalid request.' })
   }
@@ -52,7 +52,6 @@ export default async function handler(
         )
       )
     )
-    console.log('guest: ', guest)
     if (guest.data) {
       guest.data.id = guest.data.ref.id;
     }
