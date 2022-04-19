@@ -52,7 +52,9 @@ export default async function handler(
         )
       )
     )
-    guest.data.id = guest.data.ref.id;
+    if (guest.data) {
+      guest.data.id = guest.data.ref.id;
+    }
     return res.status(guest.code).json(guest)
   } catch (error) {
     res.status(400).json(error)

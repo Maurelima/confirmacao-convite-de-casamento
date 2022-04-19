@@ -45,6 +45,17 @@ const Home: NextPage = () => {
         })
         if (response.data.type === 'found') {
           const orderedGuests: InvitationData = response.data;
+          if (orderedGuests.data.data.confirmed_invitation) {
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Convite já confirmado!',
+              text: "Obrigado por fazer parte desse tão momento especial!",
+              timer: 3000,
+            })
+            setLoadingGetInvitation(false)
+            return;
+          }
           orderedGuests.data.data.guests.sort(function (a, b) {
             if (a.nome < b.nome) {
               return -1;
@@ -69,7 +80,6 @@ const Home: NextPage = () => {
             icon: 'error',
             title: 'Oops...',
             text: "Houve um erro na confirmação! Por favor tente novamente ou entre em contato conosco (Marco ou Júlia) para confirmar sua presença.",
-            timer: 5000
           })
         }
         setLoadingGetInvitation(false)
@@ -79,7 +89,6 @@ const Home: NextPage = () => {
           icon: 'error',
           title: 'Oops...',
           text: `Houve um erro na confirmação! Por favor tente novamente ou entre em contato conosco (Marco ou Júlia) para confirmar sua presença. - [${error}]`,
-          timer: 5000
         })
         setLoadingGetInvitation(false)
       }
@@ -127,19 +136,23 @@ const Home: NextPage = () => {
 
         if (response.data.type === 'alreadyConfirmed') {
           setShow(false)
+          setConfirmationCode('');
           Swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Presença já confirmada!',
             text: "Obrigado por fazer parte desse tão momento especial!",
+            timer: 5000
           })
         } else if (response.data.type === 'confirmed') {
           setShow(false)
+          setConfirmationCode('');
           Swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Presença confirmada!',
             text: "Obrigado por fazer parte desse tão momento especial. Sua presença é muito importante para nós!",
+            timer: 5000
           })
         }
       }
@@ -181,6 +194,7 @@ const Home: NextPage = () => {
         </header>
 
         <div className="container">
+
           <Tabs
             id="controlled-tab-cliente"
             activeKey={key}
@@ -238,6 +252,33 @@ const Home: NextPage = () => {
                       <a target="_blank" href="https://www.google.com.br/maps/place/Chácara+Família+Lima/@-23.2959127,-45.5030806,17z/data=!4m12!1m6!3m5!1s0x94cd0f7a5d47489b:0xf68b2b6cdcb644d7!2sChácara+Família+Lima!8m2!3d-23.2959127!4d-45.5008919!3m4!1s0x94cd0f7a5d47489b:0xf68b2b6cdcb644d7!8m2!3d-23.2959127!4d-45.5008919" rel="noreferrer">
                         <img src="/images/redencao.jpg" className="img-responsive" />
                       </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </Tab>
+            <Tab eventKey="lista" title="">
+              <section>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12">
+                      <h1>CASAMENTO JÚLIA E MARCO</h1>
+                    </div>
+                    <div className="col-12">
+                      <h3>2 de Julho de 2022</h3>
+                    </div>
+                    <div className="col-12">
+                      <p>Para presentear os noivos, acesse a lista de presentes no site do ponto frio.</p>
+                    </div>
+                    <div className="col-12 d-flex justify-content-center">
+                      <small>Caso queria presentear e encontre o item em outra loja basta informar para que o retiremos da lista. Obrigado! 💘</small>
+                    </div>
+                    <div className="col-12 d-flex justify-content-center">
+                      <div className="lista">
+                        <a href="https://listas.pontofrio.com.br/maicoejula" target="_blank" className="lista" rel="noreferrer">
+                          <img src="/images/MeuConviteDigital .png" alt="lista-de-casamento" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

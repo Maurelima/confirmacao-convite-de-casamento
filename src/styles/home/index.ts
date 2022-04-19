@@ -44,12 +44,23 @@ export const Container = styled.div`
 
                     cursor: pointer;
                 }
+
+                @media (max-width: 600px){
+                    flex-direction: column;
+                    height: auto;
+                    a {
+                        height: auto;
+                    }
+                }
             }
 
             .tab-bottom {
                 width: 100%;
                 height: 16px;
                 background: ${props => props.theme.colors.primary};
+            }
+            @media (max-width: 600px){
+                height: auto;
             }
         }
     }
@@ -109,6 +120,7 @@ export const Container = styled.div`
         .img-responsive {
             width: 100%;
             transition: .2s;
+            
             &:hover {
                 opacity: .9;
             }
@@ -164,7 +176,14 @@ export const Container = styled.div`
             }
         }
 
-
+        .lista {
+            transition: .2s;
+            background: black;
+            &:hover {
+                opacity: .9;
+            }
+        }
+  
     }
     .spinner-border {
         color: rgba(255, 255, 255, 0.3)!important;
