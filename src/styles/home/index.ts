@@ -50,6 +50,7 @@ export const Container = styled.div`
                     height: auto;
                     a {
                         height: auto;
+                        padding: 10px 10px 10px 10px;
                     }
                 }
             }
@@ -91,6 +92,7 @@ export const Container = styled.div`
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
         font-family: 'Vidaloka', sans-serif;
+        overflow-x: hidden !important;
 
         .tab-pane.active {
             animation: slide-down 0.5s ease-out;
@@ -157,22 +159,22 @@ export const Container = styled.div`
             input {
                 text-align: center;
                 margin: auto;
-                width: 420px;
+                max-width: 420px;
                 height: 58px;
                 border: 2px solid ${props => props.theme.colors.primary};
                 border-radius: 3px;
             }
 
             button {
+                display: inline;
                 margin: auto;
                 margin-top: 1rem;
-                width: 420px;
+                width:100%;
+                max-width: 420px !important;
                 height: 63px;
                 background: ${props => props.theme.colors.primary};
                 color: #fff;
-                /* border: none; */
                 border: 2px solid ${props => props.theme.colors.primary};
-                /* border-radius: 3px; */
             }
         }
 

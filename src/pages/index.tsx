@@ -228,6 +228,28 @@ const Home: NextPage = () => {
                         </button>
                       </form>
                     </div>
+                    {/* <div className="col-12"> */}
+                    {/* <div className="row">
+                    <form>
+                        <div className="col-12">
+                          <input
+                            type="text"
+                            className="form-control"
+                            aria-label="Código de confirmação"
+                            placeholder='Código de confirmação'
+                            onChange={(e) => setConfirmationCode(e.target.value)}
+                            value={confirmationCode}
+                          />
+                        </div>
+                        <div className="form-group">
+                          <button type="button" className="btn btn-primary" onClick={handleConfirmation}>
+                            {loadingGetInvitation ? (<Spinner animation="border" variant="light" />) : 'CONFIRMAR'}
+                          </button>
+                        </div>
+                      </form>
+                    </div> */}
+
+                    {/* </div> */}
                   </div>
                 </div>
               </section>

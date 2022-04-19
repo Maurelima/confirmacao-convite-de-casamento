@@ -27,6 +27,8 @@ export default createGlobalStyle`
         font: 400 1rem "Roboto", sans-serif;
         text-rendering: optimizeLegibility !important;
         -webkit-font-smoothing: antialiased !important;
+        overflow-x: hidden !important;
+        
     }
     button {
         cursor: pointer;
