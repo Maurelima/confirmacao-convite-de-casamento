@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Modal } from 'react-bootstrap'
 
 export const Container = styled.div`
     width: 100vw;
@@ -51,6 +52,28 @@ export const Container = styled.div`
                 background: ${props => props.theme.colors.primary};
             }
         }
+    }
+
+    .tab-menu {
+        .menu {
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                transition: .2s;
+                
+                &:hover {
+                    background: #A6442E;
+                }
+            }
+        }
+    }
+
+    .classActivated {
+        background: #A6442E;
     }
 
     .container {
@@ -143,4 +166,41 @@ export const Container = styled.div`
 
 
     }
+    .spinner-border {
+        color: rgba(255, 255, 255, 0.3)!important;
+    }
 `
+
+export const ModalConfirmation = styled(Modal)`
+    .modal-header {
+        background: #A6442E;
+        color: #FFFFFF;
+    }
+    .modal-body {
+        .form-data {
+            .form-check-input {
+                cursor: pointer;
+                &:checked {
+                    background-color: #A6442E !important;
+                    border-color: #A6442E !important;
+                }
+            }
+        }
+    }
+    .modal-footer {
+        button {
+            background: #A6442E;
+            border-color: #A6442E;
+
+            &:focus:not(.focus-visible) {
+              outline: none !important;
+              outline:0px !important;
+                -webkit-appearance:none;
+                box-shadow: none !important;
+            }
+            &:focus-visible {
+              outline: 2px solid #A6442E !important;
+            }
+        }
+    }
+`;
