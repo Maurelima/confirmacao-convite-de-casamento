@@ -50,8 +50,7 @@ const Home: NextPage = () => {
               position: 'center',
               icon: 'success',
               title: 'Convite já confirmado!',
-              text: "Obrigado por fazer parte desse tão momento especial!",
-              timer: 3000,
+              text: "Obrigado por fazer parte desse momento tão especial!",
             })
             setLoadingGetInvitation(false)
             return;
