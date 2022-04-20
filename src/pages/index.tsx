@@ -140,8 +140,7 @@ const Home: NextPage = () => {
             position: 'center',
             icon: 'success',
             title: 'Presença já confirmada!',
-            text: "Obrigado por fazer parte desse tão momento especial!",
-            timer: 5000
+            text: "Obrigado por fazer parte desse momento tão especial!",
           })
         } else if (response.data.type === 'confirmed') {
           setShow(false)
@@ -151,7 +150,6 @@ const Home: NextPage = () => {
             icon: 'success',
             title: 'Presença confirmada!',
             text: "Obrigado por fazer parte desse tão momento especial. Sua presença é muito importante para nós!",
-            timer: 5000
           })
         }
       }
@@ -162,7 +160,6 @@ const Home: NextPage = () => {
         icon: 'error',
         title: 'Oops...',
         text: `Houve um erro na confirmação! Por favor tente novamente ou entre em contato conosco (Marco ou Júlia) para confirmar sua presença. - [${error}]`,
-        timer: 5000
       })
       setLoadingConfirmation(false)
     }
