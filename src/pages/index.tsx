@@ -149,7 +149,7 @@ const Home: NextPage = () => {
             position: 'center',
             icon: 'success',
             title: 'Presença confirmada!',
-            text: "Obrigado por fazer parte desse tão momento especial. Sua presença é muito importante para nós!",
+            text: "Obrigado por fazer parte desse momento tão especial. Sua presença é muito importante para nós!",
           })
         }
       }
